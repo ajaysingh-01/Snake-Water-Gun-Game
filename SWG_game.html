@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const choices = ['Snake', 'Water', 'Gun'];
+        function ComputerChoice() {
+            const randomIndex = Math.floor(Math.random() * 3);
+            return choices[randomIndex];
+        }
+            function SWGgame() {
+            let userChoice = prompt("Snake , Water and Gun : Enter Your Choice: ");
+            if (!choices.includes(userChoice)) {
+                alert(`Invalid Choice: Please Enter Either 'Snake', 'Water', or 'Gun'.`);
+                return;
+            }
+            let computerChoice = ComputerChoice();
+            alert(`Computer choice : ${computerChoice}`);
+
+            if (userChoice === computerChoice) {
+                alert("It's a tie!");
+            } 
+           else if (
+                (userChoice === 'Snake' && computerChoice === 'Water') || 
+                (userChoice === 'Water' && computerChoice === 'Gun') || 
+                (userChoice === 'Gun' && computerChoice === 'Snake')
+            ) {
+                alert("You win!");
+            } else {
+                alert("You lose!");
+            }
+        }
+
+        SWGgame();
+    </script>
+</body>
+</html>
